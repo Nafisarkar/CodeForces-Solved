@@ -9,5 +9,6 @@ int main()
 	scanf("%[^\n]s",string);
 	string[0]=toupper(string[0]);
 	printf("%s\n",string);
+	
 	return 0;
 }
