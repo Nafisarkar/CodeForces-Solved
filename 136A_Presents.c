@@ -1,29 +1,21 @@
-// File:136A_Presents.c
+//136A_Presents.c
 #include<stdio.h>
-#include<stdlib.h>
 #include<string.h>
-//#include"inout.h"
+#include<stdlib.h>
+#include<ctype.h>
+//#include "inout.h"
 int main(){
 	//inout();
-	int n=0;
-	char array[20]={};
-	scanf("%d ",&n);
-	//printf("n=%d\n",n);
-	char sample;
-	int counter=0;
-	for(int i=0;i<n;i++){
-		scanf("%s\n",array);
-		if(i==0){
-			sample=array[0];
-			counter++;
-		}
-		else{
-			if(array[0]!=sample){
-				counter++;
-				sample=array[0];
-			}
-		}
+	int n,b,array[200]={};
+	scanf("%d",&n);
+	for (int i = 0; i < n; ++i)
+	{
+		scanf("%d",&b);
+		array[b]=i+1;
 	}
-	printf("%d",counter);
+	for (int i = 0; i < n; ++i)
+	{
+		printf("%d ",array[i+1]);	
+	}
 	return 0;
 }
