@@ -5,7 +5,6 @@
 #include<ctype.h>
 #include<math.h>
 //#include"inout.h"
-
 int main(){
 	//inout();
 	int t;

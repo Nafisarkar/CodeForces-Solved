@@ -1,41 +1,42 @@
-//1360B_HONEST_COACH_C
 #include<stdio.h>
-#include<ctype.h>
-#include<stdlib.h>
 #include<string.h>
+#include <limits.h>
 //#include"inout.h"
-int main(){
-    //inout();
-    int t;
-    scanf("%d", &t);
-    while(t--){
-        int x ;
-        scanf("%d",&x);
-        int array[20000];
-        for(int i=0; i < x; ++i){
-            scanf("%d",&array[i]);
-        }
-        //sort array
-        for(int i=0; i < x; ++i){
-            for(int j=i+1; j < x; ++j){
-                if(array[i] > array[j]){
-                    int temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
-                }
+void sort(int arr[],int size){
+    for(int i=0;i<size;i++){
+        for(int j=i;j<size;j++){
+            if(arr[i]>arr[j]){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
         }
-        int small=10000000000;
-        for(int i=0; i < x-1; ++i){
-            if(array[i] < array[i+1]<small){
-                small = array[i+1]-array[i];
-            };
+    }
+}
+
+int main(){
+    //inout();
+    long long t;
+    scanf("%lld",&t);
+    while (t--) {
+        long long size=0;
+        scanf("%lld",&size);
+        int array[100];
+        for(int i=0;i<size;i++){
+            scanf("%d",&array[i]);
         }
-        //print the array
-        // for(int i=0; i < x; ++i){
+        sort(array,size);
+        // for(int i=0;i<size;i++){
         //     printf("%d ",array[i]);
         // }
-        printf("%d\n",small);
+        // printf("\n");
+        long long number = 1000000000;
+        for(int i=0;i<size-1;i++){
+            if(array[i+1]-array[i]<number){
+                number = array[i+1]-array[i];
+            }
+        }
+        printf("%lld\n",number);
     }
-    return 0;
+    return  0;
 }

@@ -6,7 +6,6 @@ int main(){
 	char array[100]={};
 	scanf("%s",array);
 	//printf("%s",array);
-		
 	int size = strlen(array);
 	int four_exi=0,seven_exi=0;
 	for(int i=0;i<size;i++){
